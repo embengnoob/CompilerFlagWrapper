@@ -210,22 +210,3 @@ Instead:
    `bin\Release\CompilerFlagWrapper.vsix`
 
 5. Add release notes describing the available directive styles and configuration options.
-
-## Suggested `.gitignore`
-
-```gitignore
-.vs/
-bin/
-obj/
-
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-
-TestResults/
-*.pdb
-*.cache
-
-*.vsix
-```
