@@ -1,0 +1,15 @@
+.vs/
+bin/
+obj/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+TestResults/
+*.pdb
+*.cache
+
+# VSIX build output
+*.vsix

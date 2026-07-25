@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+	<Commands package="guidCompilerFlagWrapperPackage">
+		<Groups>
+			<Group guid="guidCompilerFlagWrapperCommandSet"
+				   id="CompilerFlagWrapperGroup"
+				   priority="0x0600">
+				<Parent guid="guidSHLMainMenu"
+						id="IDM_VS_MENU_TOOLS" />
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidCompilerFlagWrapperCommandSet"
+					id="cmdidWrapSelection"
+					priority="0x0100"
+					type="Button">
+				<Parent guid="guidCompilerFlagWrapperCommandSet"
+						id="CompilerFlagWrapperGroup" />
+
+				<Strings>
+					<ButtonText>Wrap Selection with Compiler Flag</ButtonText>
+					<CommandName>CompilerFlagWrapper.WrapSelection</CommandName>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+
+	<KeyBindings>
+		<KeyBinding guid="guidCompilerFlagWrapperCommandSet"
+					id="cmdidWrapSelection"
+					editor="guidVSStd97"
+					key1="W"
+					mod1="Control Shift" />
+	</KeyBindings>
+
+	<Symbols>
+		<GuidSymbol name="guidCompilerFlagWrapperPackage"
+					value="{f6ca82f5-53e3-4fa3-9d2a-59aa08d5988c}" />
+
+		<GuidSymbol name="guidCompilerFlagWrapperCommandSet"
+					value="{a815b71d-cfe0-43c8-a773-2bc88396b404}">
+
+			<IDSymbol name="CompilerFlagWrapperGroup"
+					  value="0x1020" />
+
+			<IDSymbol name="cmdidWrapSelection"
+					  value="0x0100" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>

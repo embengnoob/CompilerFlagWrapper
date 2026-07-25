@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest
+  Version="2.0.0"
+  xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011"
+  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+
+	<Metadata>
+		<Identity
+		  Id="CompilerFlagWrapper"
+		  Version="1.1.0"
+		  Language="en-US"
+		  Publisher="adp-SAram" />
+
+		<DisplayName>Compiler Flag Wrapper</DisplayName>
+
+		<Description xml:space="preserve">
+Compiler Flag Wrapper surrounds selected lines with a configurable C/C++ preprocessor directive.
+
+Usage:
+1. Select one or more lines in the editor.
+2. Press Ctrl+Shift+W, or select Tools > Wrap Selection with Compiler Flag.
+3. The extension inserts the configured preprocessor directives around the selected lines.
+
+Configuration:
+Open Tools > Options > Compiler Flag Wrapper > General.
+
+Settings:
+- Flag: The preprocessor symbol, for example FEATURE_FLAG.
+- Directive style:
+  - IfDef: #ifdef FEATURE_FLAG
+  - IfDefined: #if defined(FEATURE_FLAG)
+  - IfExpression: #if FEATURE_FLAG
+- Add flag to #endif comment:
+  - Enabled: #endif // FEATURE_FLAG
+  - Disabled: #endif
+
+The default keyboard shortcut is Ctrl+Shift+W. To change it, open Tools > Options > Environment > Keyboard and search for CompilerFlagWrapper.WrapSelection or Extras.WrapSelectionwithCompilerFlag or Tools.WrapSelectionwithCompilerFlag or just wrap.
+    </Description>
+
+		<Tags>C;C++;preprocessor;compiler flag;conditional compilation;ifdef</Tags>
+	</Metadata>
+
+	<Installation>
+		<InstallationTarget
+		  Id="Microsoft.VisualStudio.Community"
+		  Version="[17.0,18.0)">
+			<ProductArchitecture>amd64</ProductArchitecture>
+		</InstallationTarget>
+
+		<InstallationTarget
+		  Id="Microsoft.VisualStudio.Pro"
+		  Version="[17.0,18.0)">
+			<ProductArchitecture>amd64</ProductArchitecture>
+		</InstallationTarget>
+
+		<InstallationTarget
+		  Id="Microsoft.VisualStudio.Enterprise"
+		  Version="[17.0,18.0)">
+			<ProductArchitecture>amd64</ProductArchitecture>
+		</InstallationTarget>
+	</Installation>
+
+	<Prerequisites>
+		<Prerequisite
+		  Id="Microsoft.VisualStudio.Component.CoreEditor"
+		  Version="[17.0,18.0)"
+		  DisplayName="Visual Studio core editor" />
+	</Prerequisites>
+
+	<Assets>
+		<Asset
+		  Type="Microsoft.VisualStudio.VsPackage"
+		  d:Source="Project"
+		  d:ProjectName="%CurrentProject%"
+		  Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+	</Assets>
+
+</PackageManifest>
